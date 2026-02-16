@@ -1,0 +1,77 @@
+/* ===== 인트로(수정구슬) ===== */
+.siteHidden{ opacity:0; pointer-events:none; transform:translateY(6px); transition:.6s ease; }
+.siteShown{ opacity:1; pointer-events:auto; transform:translateY(0); }
+
+.intro{
+position:fixed; inset:0;
+display:grid; place-items:center;
+background:
+radial-gradient(900px 600px at 70% 20%, rgba(120,170,255,.14), transparent 55%),
+radial-gradient(900px 600px at 25% 80%, rgba(180,30,30,.16), transparent 58%),
+linear-gradient(180deg,#04030a,#0b0b16 56%,#04030a);
+z-index:999;
+}
+.intro.fadeOut{
+opacity:0;
+pointer-events:none;
+transition:opacity .7s ease;
+}
+
+.introInner{
+width:min(860px, 92vw);
+text-align:center;
+padding:28px 16px 26px;
+}
+
+.introTitle{
+margin:0;
+letter-spacing:.18em;
+font-size:42px;
+}
+.introSub{
+margin:10px 0 18px;
+color:rgba(233,227,214,.82);
+font-size:14px;
+}
+
+.orbWrap{ display:grid; place-items:center; gap:10px; }
+.orb{
+width:min(420px, 78vw);
+aspect-ratio: 1 / 1;
+border-radius:50%;
+position:relative;
+overflow:hidden;
+
+/* 수정구슬 내부 */
+background:
+radial-gradient(circle at 35% 30%, rgba(255,255,255,.22), rgba(255,255,255,0) 45%),
+radial-gradient(circle at 55% 65%, rgba(70,160,255,.12), rgba(0,0,0,0) 55%),
+radial-gradient(circle at 40% 75%, rgba(201,42,42,.10), rgba(0,0,0,0) 60%),
+radial-gradient(circle at 50% 50%, rgba(255,255,255,.05), rgba(0,0,0,.65) 68%),
+linear-gradient(180deg, rgba(10,10,18,.2), rgba(0,0,0,.6));
+border:1px solid rgba(233,227,214,.18);
+box-shadow:
+0 30px 90px rgba(0,0,0,.65),
+0 0 55px rgba(70,160,255,.10),
+0 0 45px rgba(201,42,42,.08);
+}
+
+/* 캔버스는 구슬 위 ‘안개층’ */
+#scratch{
+position:absolute; inset:0;
+width:100%; height:100%;
+}
+
+.orbGlow{
+position:absolute; inset:-35%;
+background:radial-gradient(circle, rgba(140,190,255,.18), rgba(140,190,255,0) 62%);
+filter: blur(18px);
+opacity:.85;
+pointer-events:none;
+}
+
+.introHint{
+margin:0;
+color:rgba(184,176,160,.9);
+font-size:12px;
+}
